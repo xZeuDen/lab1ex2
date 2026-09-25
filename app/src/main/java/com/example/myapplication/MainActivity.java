@@ -1,6 +1,10 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +24,12 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    public void button(View view) {
+        EditText name = findViewById(R.id.name);
+        String txt = name.getText().toString();
+
+        Toast.makeText(this, "Thank you for submitting your response " + txt, Toast.LENGTH_SHORT).show();
     }
 }
